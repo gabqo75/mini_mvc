@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Si le fichier ou le dossier demandé existe, on ne touche à rien (on laisse l'image s'afficher)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sinon, on envoie tout vers index.php (pour le Router)
+RewriteRule ^ index.php [L]
